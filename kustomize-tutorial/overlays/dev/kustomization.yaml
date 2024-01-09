@@ -1,0 +1,16 @@
+bases:
+- ../../base
+
+namespace: dev
+
+patches:
+- path: replicas.yaml
+  target:
+    kind: Deployment
+
+configMapGenerator:
+- name: mykustom-map
+  env: config.properties
+
+namePrefix:
+  dev-

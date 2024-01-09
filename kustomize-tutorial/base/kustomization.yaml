@@ -1,0 +1,17 @@
+resources:
+- deployment.yaml
+- service.yaml
+
+commonLabels:
+  project: project-blue
+  owner: asher-malogica
+
+commonAnnotations:
+  app: mykustom-annotations
+
+namePrefix:
+  blue-
+
+nameSuffix:
+  -v1
+
