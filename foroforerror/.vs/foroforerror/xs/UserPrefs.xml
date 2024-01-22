@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{1085FE77-A404-4AF1-BAFE-9754E7A2185F}|http">
+  <MonoDevelop.Ide.ItemProperties.foroforerror PreferredExecutionTarget="/Applications/Google Chrome.app" FirstBuild="True" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="foroforerror/WeatherForecast.cs">
+    <Files>
+      <File FileName="foroforerror/Program.cs" />
+      <File FileName="foroforerror/WeatherForecast.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="foroforerror" expanded="True">
+            <Node name="foroforerror" expanded="True">
+              <Node name="WeatherForecast.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
