@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld-svc-ui
+spec:
+  selector:
+    app: helloworld-ui
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-deployment-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld-ui
+  template:
+    metadata:
+      labels:
+        app: helloworld-ui
+    spec:
+      containers:
+      - name: helloworld-container
+        image: asherlab/foroforerror-ui:latest  # NGINX image
+        ports:
+        - containerPort: 80

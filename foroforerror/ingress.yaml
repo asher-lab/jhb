@@ -1,0 +1,50 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: helloworld-ingress-ui
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: helloworld-ui.asherl.com
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: helloworld-svc-ui
+            port:
+              number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: helloworld-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "http://helloworld-ui.asherl.com"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, OPTIONS"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type"
+    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+    nginx.ingress.kubernetes.io/cors-preflight-status-code: "200"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: helloworld.asherl.com
+    http:
+      paths:
+      - path: /v1/siteadmin(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: helloworld-svc
+            port:
+              number: 80
+      - path: /v1/intersection(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: helloworld-svc
+            port:
+              number: 80
